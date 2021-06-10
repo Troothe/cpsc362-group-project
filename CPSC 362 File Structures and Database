@@ -1,0 +1,93 @@
+--
+-- Database: `CPSC 362`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journal_entries`
+--
+
+CREATE TABLE `journal_entries` (
+  `user_id_journal` int(10) NOT NULL COMMENT 'Foreign key to user table ',
+  `daily_affirmations` mediumtext NOT NULL COMMENT 'Daily affirmations are stored in this data structure',
+  `gratitude_journal` mediumtext NOT NULL COMMENT 'Gratitude entries are stored in this data structure',
+  `just_write` mediumtext NOT NULL COMMENT 'Free writing for any journal entry'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meditation`
+--
+
+CREATE TABLE `meditation` (
+  `user_id_meditation` int(10) NOT NULL COMMENT 'Foreign key to user table',
+  `meditation_time` int(11) NOT NULL COMMENT 'Tracks meditation session time',
+  `meditation_streak` int(11) NOT NULL COMMENT 'Tracks meditation streak'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thought_tracker`
+--
+
+CREATE TABLE `thought_tracker` (
+  `user_id_thought_tracker` int(10) NOT NULL COMMENT 'Foreign key to user table',
+  `anxious_thoughts` int(11) NOT NULL DEFAULT '0' COMMENT 'Counts the amount of anxious thoughts each day ',
+  `depressed_thoughts` int(11) NOT NULL DEFAULT '0' COMMENT 'Counts the amount of depressing thoughts each day ',
+  `cravings` int(11) NOT NULL DEFAULT '0' COMMENT 'Counts the amount of cravings each day '
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `email` varchar(256) NOT NULL COMMENT 'Used to store a user''s email address',
+  `password` varchar(256) NOT NULL COMMENT 'Used to store a users password (md5 encrypted)',
+  `user_id` int(10) NOT NULL COMMENT 'Stores the user''s unique_id.  Will be used for lookups to other tables',
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Holds timestamp of when this account was created'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `journal_entries`
+--
+ALTER TABLE `journal_entries`
+  ADD UNIQUE KEY `user_id` (`user_id_journal`) USING BTREE;
+
+--
+-- Indexes for table `meditation`
+--
+ALTER TABLE `meditation`
+  ADD UNIQUE KEY `user_id` (`user_id_meditation`) USING BTREE;
+
+--
+-- Indexes for table `thought_tracker`
+--
+ALTER TABLE `thought_tracker`
+  ADD UNIQUE KEY `user_id` (`user_id_thought_tracker`) USING BTREE;
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Stores the user''s unique_id.  Will be used for lookups to other tables';
+COMMIT;
