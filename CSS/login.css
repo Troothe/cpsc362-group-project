@@ -1,0 +1,75 @@
+
+
+.CreateAccountTable {
+    width: 450px;
+    border: 1px solid #4F6D7A;
+    background-color: #FFF;
+    table-layout: fixed;
+    padding: 60px 0px;
+    border-radius: 30px;
+    margin-left: calc(50% - 225px);
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CreateAccountTable td {
+    text-align: center;
+}
+
+.CreateAccountTable input[type=text],
+.CreateAccountTable input[type=password]{
+    font-size: 14pt;
+    border-radius: 15pt;
+    border: 1px solid gray;
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 4px 0 4px 20px;
+}
+
+.CreateAccountTable input[type=submit],
+.SubmitButtonLogin {
+    background-color: #233C67;
+    color: white;
+    width: calc(100% - 20px);
+    border: none;
+    font-size: 16pt;
+    padding: 5px;
+    border-radius: 15pt;
+    cursor: pointer;
+    
+}
+
+.CreateAccountInputTag {
+    font-size: 9pt;
+    text-align: left;
+    padding-left: 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-weight: 100;
+    color: #4F6D7A;
+}
+
+.or-separator {
+  width: 70%;
+  margin: 1em auto;
+  overflow: hidden;
+  text-align: center;
+  font-weight:300;
+  color: #4F6D7A;
+    font-size: 12pt;
+}
+.or-separator:before, .or-separator:after {
+  content: "";
+  display: inline-block;
+  width: 50%;
+  margin: 0 .5em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+}
+.or-separator:after {
+  margin: 0 -55% 0 .5em;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+}
