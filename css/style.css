@@ -1,0 +1,158 @@
+/*===== default css  =====*/
+html{
+  scroll-behavior: smooth;
+}
+body{
+	padding: 0;
+	margin: 0;
+    font-family: 'Lato', sans-serif;
+    display:flex; 
+  flex-direction:column;
+}
+/*===== css =====*/
+.topbar{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: blue;
+	padding: 50px 0px 50px 0px;
+}
+.topbar h2{
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+}
+
+.banner{
+	width: 100%;
+	height: auto;
+	float: left;
+	padding-bottom: 50px;
+	background: rgb(0,193,96);
+background: linear-gradient(90deg, rgba(0,193,96,1) 16%, rgba(0,113,255,1) 100%);
+}
+.banner h2{
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: 2px;
+	padding: 60px 0px 40px 0px;
+}
+
+.my-music-one{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #fff;
+	padding: 50px 0px 50px 0px;
+}
+.my-music-one h2{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 30px;
+	color: #002060;
+
+}
+.my-music-tow{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #c6e9af;
+	padding: 50px 0px 50px 0px;
+}
+.my-music-tow h2{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 30px;
+	color: #002060;
+
+}
+
+/*=====Audio plyer css =====*/
+.player {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 10px;
+}
+
+.player .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.player .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    pointer-events: none;
+    border-radius: 10px 10px 0px 0px;
+}
+.player audio {
+    width: 100%;
+    padding:0px 10px 0px 10px;
+    background: #f1f3f4;
+    border-radius: 10px;
+}
+/*=====Audio plyer css =====*/
+.stop{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: rgb(0,193,96);
+background: linear-gradient(90deg, rgba(0,193,96,1) 16%, rgba(0,113,255,1) 100%);
+	padding: 100px 0px 100px 0px;
+}
+
+.stop h1{
+	text-align: center;
+	display: inline-block;
+	width: 100px;
+	height: 75px;
+	background-color: #132249;
+	font-weight: bold;
+	font-size: 60px;
+	color: #fff !important;
+	border-radius: 5px 5px 5px;
+	margin: 0px;
+	margin-bottom: 10px;
+
+}
+.stop button{
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px 5px 5px;
+	background-color: white !important;
+	color: black !important;
+	font-size: 20px;
+	font-weight: bold;
+}
+.stop h4{
+	text-align: center;
+	letter-spacing: 2px;
+	font-weight: bold;
+	color: #fff;
+	font-size: 36px;
+}
+
+
+/*=====Audio plyer css =====*/
+/*=====Audio plyer css =====*/
+/*=====Audio plyer css =====*/
+/*===== Computer and large & extra-large device=====*/
+@media screen and (min-width: 768px)
+{
+ /*===== Start only computer css =====*/
+
+}
+/*===== Mobile, tab and medium & small device =====*/
+@media screen and (max-width: 768px)
+{
+	/*===== start Mobile css =====*/
+ 
+
+}
