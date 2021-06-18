@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - freeCodeCamp: Pomodoro Clock</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- --------------------------------------------- -->
+<!-- Image inspired by Tide, a pomodoro app I use. -->
+<!-- Check it out at: https://tide.moreless.io/en/ -->
+<!-- --------------------------------------------- -->
+
+<div id="pomodoro">
+  <div id="clock">
+    <div id="timer">
+      <div id="title">Ready?</div>
+      <div id="countdown">
+        <span id="minutes">30</span>
+        <span id="seconds">00</span>
+      </div>
+      <div id="controls" class="reset">
+        <div id="start"><i class="fas fa-play"></i> Start</div>
+        <div id="pause"><i class="fas fa-pause"></i> Pause</div>
+        <div id="reset"><i class="fas fa-sync-alt"></i> Reset</div>
+      </div>
+    </div>
+  </div>
+  <div id="options">
+    <div id="session">
+      <i id="incrSession" class="fas fa-angle-double-up"></i>
+      <span class="option-title">Session</span>
+      <input id="sessionInput" type="number" value="30" max="60" min="5">
+      <i id="decrSession" class="fas fa-angle-double-down"></i>
+    </div>
+
+  </div>
+</div>
+<div id="audio-selector">
+  <div id="forest" class="theme"><!--🌲 -->Forest</div>
+  <div id="ocean" class="theme"><!--🌊 -->Ocean</div>
+  <div id="rainy" class="selected theme"><!--🌧 -->Rainy</div>
+  <div id="peace" class="theme"><!--🧘 -->Peace</div>
+  <div id="cafe" class="theme"><!--☕ -->Caf&eacute;</div>
+</div>
+<audio loop autoplay="false" src="https://joeweaver.me/codepenassets/freecodecamp/challenges/build-a-pomodoro-clock/rain.mp3">
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.0.6/js/all.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
