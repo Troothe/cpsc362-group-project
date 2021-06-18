@@ -84,4 +84,44 @@ function createAccount($sql_conn, $email, $password, $password_confirm) {
     }
 }
 
+function trackThought($sql_conn, $user_id, $thought, $new_value) {
+    //Check the connection
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } else {
+        
+        //Perform a search to see if there is already an entry in our database
+        $sql = "SELECT * FROM thought_tracker WHERE user_id_thought_tracker='$user_id'";
+
+        //Make query and get result
+        $result = mysqli_query($sql_conn, $sql);
+        
+        if(mysqli_num_rows($result) > 1) {
+            //If there is more than one entry, this is not good.  Show an error and return false
+            array_push($_SESSION['ErrorsToShow'], "Too many logs found in our query, please try again.");
+            return false;
+        } else if(mysqli_num_rows($result) == 1) {
+            //Found one result, we can move on as normal
+            $continue = true;
+        } else {
+            //No results found, create a new entry in our database
+            $sql = "INSERT INTO thought_tracker(user_id_thought_tracker) VALUES ('$user_id')";
+            if(mysqli_query($sql_conn, $sql)) {
+                //success
+                $continue = true;
+            }
+        }  
+        
+        //If there is an entry in our database for us to change, do so here
+        if(isset($continue) && $continue == true) {
+        
+            //Update the table row
+            $sql = "UPDATE thought_tracker SET $thought = '$new_value' WHERE user_id_thought_tracker = '$user_id'";
+
+            //Make query and get result
+            $result = mysqli_query($sql_conn, $sql);
+        }
+    }
+}
+
 ?>
