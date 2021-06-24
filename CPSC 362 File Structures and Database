@@ -12,7 +12,8 @@ CREATE TABLE `journal_entries` (
   `user_id_journal` int(10) NOT NULL COMMENT 'Foreign key to user table ',
   `daily_affirmations` mediumtext NOT NULL COMMENT 'Daily affirmations are stored in this data structure',
   `gratitude_journal` mediumtext NOT NULL COMMENT 'Gratitude entries are stored in this data structure',
-  `just_write` mediumtext NOT NULL COMMENT 'Free writing for any journal entry'
+  `just_write` mediumtext NOT NULL COMMENT 'Free writing for any journal entry',
+  `journal_date` date NOT NULL COMMENT 'Tracks date of each entry'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
