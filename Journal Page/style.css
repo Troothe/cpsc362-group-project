@@ -1,0 +1,150 @@
+/*===== default css  =====*/
+html{
+  scroll-behavior: smooth;
+}
+body{
+	padding: 0;
+	margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*=====header css =====*/
+.header{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: rgb(76,212,248);
+    background: linear-gradient(90deg, rgba(76,212,248,1) 0%, rgba(36,67,99,1) 100%);
+	padding: 50px 0px 50px 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+.header h1{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 62px;
+	text-align: center;
+	font-weight: bold;
+	margin: 0px;
+	color: #fff;
+	letter-spacing: 2px;
+}
+/*===== css =====*/
+.main{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #fff;
+	padding: 50px 0px 50px 0px;
+}
+
+
+.main-form{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: transparent;
+	box-shadow: 1px 1px 10px gray;
+	padding: 0px 0px 10px 0px;
+	margin-bottom: 40px;
+}
+
+.time{
+  width:100%;
+  height: auto;
+  float: left;
+  padding: 25px 0px 25px 0px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #192f3d;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  border-radius: 0px 0px 10px 10px;
+}
+.time b{
+	color: #a1a1a1;
+}
+.date{
+	font-size: 24px;
+	font-weight: bold;
+}
+.image-box{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #fff;
+	padding: 20px 0px 20px 0px;
+	padding-left: 16px;
+}
+.title{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #192f3d;
+	color: #fff;
+	padding: 10px 0px 10px 0px;
+	margin-bottom: 20px;
+}
+.title h4{
+	text-align: center;
+	font-weight: bold;
+	margin: 0px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+textarea{
+  padding: 10px;
+  width: 96%;
+  resize: none;
+  border-color: #bcbcbc;
+  border-radius: 7px;
+}
+.form-control{
+  padding: 10px;
+  width: 96%;
+}
+
+button{
+	width: 150px;
+	height: 45px;
+	background:#192f3d;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+}
+/*===== css =====*/
+/*===== css =====*/
+/*===== css =====*/
+/*===== css =====*/
+
+/*===== Computer and large & extra-large device=====*/
+@media screen and (min-width: 768px)
+{
+ /*===== Start only computer css =====*/
+
+}
+/*===== Mobile, tab and medium & small device =====*/
+@media screen and (max-width: 768px)
+{
+	/*===== start Mobile css =====*/
+ .date{
+	font-size: 20px;
+	font-weight: bold;
+}
+textarea{
+  width: 94%;
+  resize: none;
+}
+.form-control{
+  padding: 10px;
+  width: 94%;
+}
+}
