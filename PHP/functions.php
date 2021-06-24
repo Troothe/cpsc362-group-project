@@ -132,7 +132,6 @@ function insertJournalEntry($sql_conn, $user_id, $affirmations, $gratitude, $jus
 
     //Insert journal entries into database
     $sql = "INSERT INTO journal_entries(user_id_journal, daily_affirmations, gratitude_journal, just_write, journal_date) VALUES ('$user_id', '$affirmations', '$gratitude', '$just_write', '$journal_date')";
-    }
 }
 
 function pullJournalEntry($sql_conn, $user_id) {
