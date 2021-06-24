@@ -124,4 +124,28 @@ function trackThought($sql_conn, $user_id, $thought, $new_value) {
     }
 }
 
+function insertJournalEntry($sql_conn, $user_id, $affirmations, $gratitude, $just_write) { 
+    //Check the connection
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+
+    //Insert journal entries into database
+    $sql = "INSERT INTO journal_entries(user_id_journal, daily_affirmations, gratitude_journal, just_write) VALUES ('$user_id', '$affirmations', '$gratitude', '$just_write')";
+}
+
+function pullJournalEntry($sql_conn, $user_id) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+
+    //Perform a search to see if there is already an entry in our database
+    $sql = "SELECT * FROM journal_entries WHERE user_id_journal='$user_id'";
+
+     //Make query and get result
+     $result = mysqli_query($sql_conn, $sql);
+
+     //Show result
+     $_SESSION['journal_entries'] = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
 ?>
