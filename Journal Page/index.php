@@ -1,4 +1,25 @@
+<?php
 
+session_start();
+include('../PHP/functions.php');
+include('../PHP/startup.php');
+
+if(!isset($_SESSION['JournalDate'])) {
+    $_SESSION['JournalDate'] = date("Y-m-d");
+} else if(isset($_POST['NewJournalDate'])) {
+    $_SESSION['JournalDate'] = $_POST['NewJournalDate'];
+}
+
+
+//Check the database to see if an entry exists for our current $_SESSION['JournalDate']
+if(!checkJournalEntryExistsByDate($sql_conn, $_SESSION['user']['user_id'], $_SESSION['JournalDate'])) {
+    insertJournalEntry($sql_conn, $_SESSION['user']['user_id'], $_SESSION['JournalDate']);
+}
+
+pullSingleJournalEntryByDate($sql_conn, $_SESSION['user']['user_id'], $_SESSION['JournalDate']);
+
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -73,7 +94,7 @@
       </fieldset>
 
 
-       <center><button type="submit" name="submit">Save</button></center>
+       <center></center>
 
         </form>
       </div>
@@ -98,7 +119,7 @@
       </fieldset>
 
 
-       <center><button type="submit" name="submit">Save</button></center>
+       <center></center>
 
         </form>
       </div>
@@ -125,7 +146,7 @@
       </fieldset>
 
 
-       <center><button type="submit" name="submit">Save</button></center>
+       <center></center>
 
         </form>
       </div>
@@ -150,7 +171,7 @@
       </fieldset>
 
 
-       <center><button type="submit" name="submit">Save</button></center>
+       <center></center>
 
         </form>
       </div>
