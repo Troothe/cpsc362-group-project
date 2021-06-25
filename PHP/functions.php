@@ -148,4 +148,16 @@ function pullJournalEntry($sql_conn, $user_id) {
      //Show result
      $_SESSION['journal_entries'] = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
+
+function editJournalEntry($sql_conn, $user_id, $journal_date, $field, $value) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+    
+    $sql = "UPDATE journal_entries SET $field = '$value' WHERE (user_id_journal='$user_id') AND (journal_date='$journal_date')";
+    
+    //Make query and get result
+    $result = mysqli_query($sql_conn, $sql);
+}
+
 ?>
