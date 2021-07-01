@@ -84,6 +84,25 @@ function createAccount($sql_conn, $email, $password, $password_confirm) {
     }
 }
 
+function insertThought($sql_conn, $user_id, $thought, $new_value) { 
+    //Check the connection
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+    
+    //Insert tracked entries into database
+    //Perform a search to see if there is already an entry in our database
+        $sql = "SELECT * FROM thought_tracker WHERE user_id_thought_tracker='$user_id'";
+
+        //Make query and get result
+        $result = mysqli_query($sql_conn, $sql);
+        
+        if(mysqli_num_rows($result) < 1) {
+            //If there is more than one entry, insert tracker into entry
+            $sql = "INSERT INTO thought_tracker(user_id_thought_tracker) VALUES ('$user_id')";
+		}
+}
+
 function trackThought($sql_conn, $user_id, $thought, $new_value) {
     //Check the connection
     if(!$sql_conn) {
