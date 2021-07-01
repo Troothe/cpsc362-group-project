@@ -1,0 +1,126 @@
+/*===== default css  =====*/
+html{
+  scroll-behavior: smooth;
+}
+body{
+	padding: 0;
+	margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*=====header css =====*/
+.header{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: rgb(76,212,248);
+    background: linear-gradient(90deg, rgba(76,212,248,1) 0%, rgba(36,67,99,1) 100%);
+	padding: 50px 0px 50px 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+.header h1{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 62px;
+	text-align: center;
+	font-weight: bold;
+	margin: 0px;
+	color: #fff;
+	letter-spacing: 2px;
+}
+/*===== css =====*/
+.main{
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #fff;
+	padding: 50px 0px 50px 0px;
+}
+
+.main h2{
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+
+/* -- quantity box -- */
+
+.quantity {
+ display: inline-block; }
+
+.quantity .input-text.qty {
+ width: 35px;
+ height: 39px;
+ padding: 0 5px;
+ text-align: center;
+ background-color: transparent;
+ border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+ text-align: left;
+ position: relative;
+ white-space: nowrap;
+ vertical-align: top;
+ margin-top: 10px; }
+
+.quantity.buttons_added input {
+ display: inline-block;
+ margin: 0;
+ vertical-align: top;
+ box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+ padding: 7px 10px 8px;
+ height: 41px;
+ background-color: #ffffff;
+ border: 1px solid #efefef;
+ cursor:pointer;}
+
+.quantity.buttons_added .minus {
+ border-right: 0; }
+
+.quantity.buttons_added .plus {
+ border-left: 0; }
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+ background: #eeeeee; }
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ margin: 0; }
+ 
+ .quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+ outline: none; }
+
+
+
+.mbl-center{
+	text-align: right;
+}
+
+
+
+/*===== Mobile, tab and medium & small device =====*/
+@media screen and (max-width: 768px)
+{
+	/*===== start Mobile css =====*/
+ .main h2{
+	text-align: center;
+}
+
+.mbl-center{
+	text-align: center;
+}
+.quantity.buttons_added {
+ margin-top: 0px;
+ margin-bottom: 20px; }
+
+
+}
