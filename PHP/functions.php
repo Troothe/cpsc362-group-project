@@ -84,6 +84,17 @@ function createAccount($sql_conn, $email, $password, $password_confirm) {
     }
 }
 
+function editThoughtCount($sql_conn, $user_id, $field, $value) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+    
+    $sql = "UPDATE thought_tracker SET $field = '$value' WHERE (user_id_thought_tracker='$user_id')";
+    
+    //Make query and get result
+    $result = mysqli_query($sql_conn, $sql);
+}
+
 function insertThought($sql_conn, $user_id, $thought, $new_value) { 
     //Check the connection
     if(!$sql_conn) {
@@ -100,7 +111,8 @@ function insertThought($sql_conn, $user_id, $thought, $new_value) {
         if(mysqli_num_rows($result) < 1) {
             //If there is more than one entry, insert tracker into entry
             $sql = "INSERT INTO thought_tracker(user_id_thought_tracker) VALUES ('$user_id')";
-		}
+		$result = mysqli_query($sql_conn, $sql);
+	}
 }
 
 function trackThought($sql_conn, $user_id, $thought, $new_value) {
@@ -166,6 +178,53 @@ function pullJournalEntry($sql_conn, $user_id) {
 
      //Show result
      $_SESSION['journal_entries'] = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+function editJournalEntry($sql_conn, $user_id, $journal_date, $field, $value) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+    
+    $sql = "UPDATE journal_entries SET $field = '$value' WHERE (user_id_journal='$user_id') AND (journal_date='$journal_date')";
+    
+    //Make query and get result
+    $result = mysqli_query($sql_conn, $sql);
+}
+
+function pullSingleJournalEntryByDate($sql_conn, $user_id, $journal_date) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+
+    //Perform a search to see if there is already an entry in our database
+    $sql = "SELECT * FROM journal_entries WHERE (user_id_journal='$user_id') AND (journal_date='$journal_date')";
+
+    $result = mysqli_query($sql_conn, $sql);
+    if(mysqli_num_rows($result) == 1) {
+        $_SESSION['journal_entry'] = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
+    } else {
+        array_push($_SESSION['ErrorsToShow'], "Error fetching journal entries.  Please try again.");
+    }
+}
+
+function checkJournalEntryExistsByDate($sql_conn, $user_id, $journal_date) {
+    if(!$sql_conn) {
+        array_push($_SESSION['ErrorsToShow'], "We are having trouble accessing our database.  Please try again.");
+    } 
+
+    //Perform a search to see if there is already an entry in our database
+    $sql = "SELECT * FROM journal_entries WHERE (user_id_journal='$user_id') AND (journal_date='$journal_date')";
+
+     //Make query and get result
+     $result = mysqli_query($sql_conn, $sql);
+
+     //Show result
+     $TempJournalArray = mysqli_fetch_all($result, MYSQLI_ASSOC);
+     if(count($TempJournalArray) > 0) {
+         return true;
+     } else {
+         return false;
+     }
 }
 
 function editJournalEntry($sql_conn, $user_id, $journal_date, $field, $value) {
