@@ -15,67 +15,54 @@ if(isset($_POST['login_button'])) {
 
 
 ?>
-<!doctype html>
-<html>
-    <head>
-        <!-- Include CSS files for styling -->
-        <link rel="stylesheet" type="text/css" href="CSS/universal.css?nocache=<?php echo microtime(); ?>">
-        <link rel="stylesheet" type="text/css" href="CSS/headers_and_footers.css?nocache=<?php echo microtime(); ?>">
-        <link rel="stylesheet" type="text/css" href="CSS/login.css?nocache=<?php echo microtime(); ?>">
-        <title>Login</title>
-    </head>
-    <body>
-        <!-- Add our header to the page -->
-        <?php include("HeadersAndFooters/plain_header.php"); ?>
-        
-        
-        <!-- Show our login form.  Submit data to PHP for authentication -->
-        <?php
-        echo '
-        <form method="post" action="">
-            <table class="CreateAccountTable">
-                <tr>
-                    <td width="50px"></td>
-                    <td></td>
-                    <td width="50px"></td>
-                </tr>
-                ' . (isset($CreateAccountError) ? '<tr><td></td><td style="color: red; padding-bottom: 30px; font-size: 12pt; font-weight: bold;">' . $CreateAccountError . '</td><td></td></tr>' : '') . '
-                <tr>
-                    <td></td>
-                    <td><p class="CreateAccountInputTag">Email</p></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="text" name="email" value="' . (isset($_POST['email']) ? $_POST['email'] : '') . '" required /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><p class="CreateAccountInputTag">Password</p></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="password" name="password" required /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td><td><input type="submit" value="Login" name="login_button" /></td><td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td style="padding-top: 10px; font-size: 11pt;"><p class="or-separator">OR</P></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td><td style="padding-top: 10px;"><a href="create_account.php"><button type="button" class="SubmitButtonLogin">Create An Account</button></a></td><td></td>
-                </tr>
-            </table>
-        </form>
-        ';
-        
-        ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login_new.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title"> 
+	  <img src="Images/MH.jpg" style="width: 130px">
+	  </div>
+      <form method="post" action="">
+        <div class="field">
+          <input type="text" name="email" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : ''); ?>" required />
+          <label>Email Address</label>
+        </div>
+        <div class="field">
+          <input type="password" name="password" required>
+          <label>Password</label>
+        </div>
+        <!-- 
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <div class="pass-link"><a href="#">Forgot password?</a></div>
+        </div>
+        -->
+        <div class="field">
+          <input type="submit" value="Login" name="login_button" style="margin-top: 0px;">
+        </div>
+        <div class="signup-link">Not a member? <a href="create_account.php">Signup now</a></div>
+      </form>
+    </div>
+<div class="fixed-header">
+        <div class="container">
+            
+               <span id="relief">Relief</span> <span class="a">LOGIN</span>
+            	
+        </div>
+    </div>
+     
+    <div class="fixed-footer">
+        <div class="container"></div>        
+    </div>
+
         
         <!-- Add jquery and javascript files being used -->
         <script src="JS/jquery-3.2.1.min.js"></script>
