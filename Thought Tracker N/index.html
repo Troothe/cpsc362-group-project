@@ -26,6 +26,13 @@
 <section class="header">
   <div class="container">
     <h1>Thought Tracker</h1>
+    <nav class="nav-menu float-right d-none d-lg-block">
+      <ul>
+        <li ><a href="homepage.html"> Home</a></li>
+        <li ><a href="medation.html"> Medation</a></li>
+        <li ><a href="Journal.html"> Journal</a></li>
+      </ul>
+    </nav>
   </div>
 </section>
 <!--==========Section start==========-->
@@ -38,7 +45,7 @@
 
       <div class="mbl-center">
         <div class="quantity buttons_added">
-        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
        </div>
       </div>
         
@@ -51,7 +58,7 @@
       <div class="col-md-2">
         <div class="mbl-center">
         <div class="quantity buttons_added">
-  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
 </div></div>
       </div>
       <div class="col-md-3"></div>
@@ -62,7 +69,7 @@
       <div class="col-md-2">
         <div class="mbl-center">
         <div class="quantity buttons_added">
-  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
 </div></div>
       </div>
       <div class="col-md-3"></div>
@@ -74,12 +81,33 @@
       <h2>Daily Total</h2>
     </div>
     <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <hr>
+      <small>On a scale of 0 to 10, the higher the scale, the more severe the impact.Levels 0 are no anxiety, 1-3 are mild, 4-6 are moderate, and 7-10 are severe and panic.The same criteria apply to ratings of depression and addiction.</small>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <small>The definitions of different levels of symptoms can be found in more detail on the following websites: <a href="https://www.therecoveryvillage.com/mental-health/anxiety/related/levels-of-anxiety/">Anxiety</a> ,<a href="https://www.ncbi.nlm.nih.gov/books/NBK82926/">Depression</a>, and <a href="https://www.clearviewtreatment.com/blog/stages-drug-alcohol-addiction/">Addiction</a>.</small>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <hr>
+      <small> Severe symptoms of depression and anxiety may cause you to lose hope, but be assured that there are many people in the world who want you to survive.
+If you or someone close to you is suicidal because of anxiety or depression, please call the <b>Suicide Prevention Hotline: 1-800-273-8255</b>.
+Also, if you are suffering from an addiction, seek treatment as soon as possible. Early treatment means better results!</small>
+    </div>
+    <div class="col-md-3"></div>
   </div>
-    
+
   </div>
 </section>
 <section class="header">
+    <h4><b>Although it sometimes only takes one bad day to ruin a person, please believe that there will be more unknown and better tomorrow!</b></h4>
 </section>
+
 
         <!--=========================your site content End =====================-->
         <!--++++++++ your site Javascript hare ++++++++-->
@@ -106,10 +134,13 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
         e = a.attr("step");
     b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a.val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
 });
-          
+
         </script>
         <!--++++++++ your site Javascript hare ++++++++-->
   <!-- Bootstraf cdn JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+<footer>
+
+</footer>
 </html>
