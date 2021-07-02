@@ -1,8 +1,22 @@
+<?php
+
+session_start();
+include('../PHP/functions.php');
+include('../PHP/startup.php');
+
+//Create a db entry for the user if there isn't one already, initialize values to 0
+insertThought($sql_conn, $_SESSION['user']['user_id']);
+
+//Retrieve the db entry for the user with thought values to be used on the html page
+getUserThoughts($sql_conn, $_SESSION['user']['user_id']);
+
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
       <meta charset="utf-8">
-      <title>Wellcome</title>
+      <title>Thoughts</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       
@@ -45,8 +59,9 @@
 
       <div class="mbl-center">
         <div class="quantity buttons_added">
-        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-       </div>
+            <input type="button" value="-" class="minus" onclick="updateThoughts('anxious_thoughts', Number(document.getElementById('anxious-thoughts-count').value) - 1)">
+            <input id="anxious-thoughts-count" type="number" step="1" min="0" max="1000" name="quantity" value="<?php echo $_SESSION['user_thoughts']['anxious_thoughts']; ?>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onblur="updateThoughts('anxious_thoughts', Number(document.getElementById('anxious-thoughts-count').value))">
+            <input type="button" value="+" class="plus" onclick="updateThoughts('anxious_thoughts', Number(document.getElementById('anxious-thoughts-count').value) + 1)">       </div>
       </div>
         
       </div>
@@ -58,8 +73,9 @@
       <div class="col-md-2">
         <div class="mbl-center">
         <div class="quantity buttons_added">
-  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-</div></div>
+            <input type="button" value="-" class="minus" onclick="updateThoughts('depressed_thoughts', Number(document.getElementById('depressed-thoughts-count').value) - 1)">
+            <input id="depressed-thoughts-count" type="number" step="1" min="0" max="1000" name="quantity" value="<?php echo $_SESSION['user_thoughts']['depressed_thoughts']; ?>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onblur="updateThoughts('depressed_thoughts', Number(document.getElementById('depressed-thoughts-count').value))">
+            <input type="button" value="+" class="plus" onclick="updateThoughts('depressed_thoughts', Number(document.getElementById('depressed-thoughts-count').value) + 1)"></div></div>
       </div>
       <div class="col-md-3"></div>
     </div>
@@ -69,8 +85,9 @@
       <div class="col-md-2">
         <div class="mbl-center">
         <div class="quantity buttons_added">
-  <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="10" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-</div></div>
+            <input type="button" value="-" class="minus" onclick="updateThoughts('cravings', Number(document.getElementById('cravings-thoughts-count').value) - 1)">
+            <input id="cravings-thoughts-count" type="number" step="1" min="0" max="1000" name="quantity" value="<?php echo $_SESSION['user_thoughts']['cravings']; ?>" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onblur="updateThoughts('cravings', Number(document.getElementById('cravings-thoughts-count').value))">
+            <input type="button" value="+" class="plus" onclick="updateThoughts('cravings', Number(document.getElementById('cravings-thoughts-count').value) + 1)"></div></div>
       </div>
       <div class="col-md-3"></div>
     </div>
@@ -139,6 +156,7 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
         <!--++++++++ your site Javascript hare ++++++++-->
   <!-- Bootstraf cdn JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="js/thoughts.js"></script>
 </body>
 <footer>
 
