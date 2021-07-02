@@ -42,9 +42,9 @@ getUserThoughts($sql_conn, $_SESSION['user']['user_id']);
     <h1>Thought Tracker</h1>
     <nav class="nav-menu float-right d-none d-lg-block">
       <ul>
-        <li ><a href="homepage.html"> Home</a></li>
-        <li ><a href="medation.html"> Medation</a></li>
-        <li ><a href="Journal.html"> Journal</a></li>
+        <li ><a href="../home.php"> Home</a></li>
+        <li ><a href="../meditate.php"> Medation</a></li>
+        <li ><a href="../journal/index.php"> Journal</a></li>
       </ul>
     </nav>
   </div>
